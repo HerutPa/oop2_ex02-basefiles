@@ -1,8 +1,9 @@
 #pragma once
 #include "Validators.h"
+#include <string>
 
 
-class RegexValidator 
+class RegexValidator : public Validators<string>
 {
 
 
