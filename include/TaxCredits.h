@@ -9,6 +9,7 @@ public:
 	const int Max() const { return TAX; };
 
 private:
-	std::string m_taxCredits[TAX] = { "None ", "Basic " ,"Extended" };
+	std::string m_taxCredits[TAX] = { "I don't have any additional salary ", "I would like to receive credit points against this income " 
+		,"I am not requesting credit points for any other income " };
 
 };

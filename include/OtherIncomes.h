@@ -1,5 +1,5 @@
 #pragma once 
-const int INCOMES = 3;
+const int INCOMES = 6;
 class OtherIncomes
 {
 public:
@@ -9,7 +9,8 @@ public:
 	const int Max() const { return INCOMES; };
 
 private:
-	std::string m_otherIncomes[INCOMES] = { "Morning/Noon ", "After-Noon/Evening " ,"Night" };
+	std::string m_otherIncomes[INCOMES] = { "I don't have any additional salary ", "Monthly salary " ,"Salary for an additional position "
+	, "Part-time salary ", "Allwance ", "Stpiend "};
 
 };
 

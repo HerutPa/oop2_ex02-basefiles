@@ -2,10 +2,10 @@
 #include "FormValidator.h"
 
 template <class T1, class T2>
-class otherIncomesAndTaxCreditsValidator : public FormValidator
+class OtherIncomesAndTaxCreditsValidator : public FormValidator
 {
 public:
-	otherIncomesAndTaxCreditsValidator(T1*, T2*);
+	OtherIncomesAndTaxCreditsValidator(T1*, T2*);
 	const bool checkValidation() override;
 
 private:
@@ -14,13 +14,13 @@ private:
 };
 
 template<class T1, class T2>
-inline otherIncomesAndTaxCreditsValidator<T1, T2>::otherIncomesAndTaxCreditsValidator(T1* destination, T2* wifi)
+inline OtherIncomesAndTaxCreditsValidator<T1, T2>::OtherIncomesAndTaxCreditsValidator(T1* destination, T2* wifi)
 	:m_destination(destination), m_wifi(wifi)
 {
 }
 
 template<class T1, class T2>
-inline const bool otherIncomesAndTaxCreditsValidator<T1, T2>::checkValidation()
+inline const bool OtherIncomesAndTaxCreditsValidator<T1, T2>::checkValidation()
 {
 	//get the integer value from T
 	int wifi = m_wifi->getInfo().getValue();

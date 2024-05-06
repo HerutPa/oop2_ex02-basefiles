@@ -1,7 +1,7 @@
 #pragma once 
 #include <string>
 
-const int INPOTION = 5;
+const int INPOTION = 4;
 
 class IncomeOptions
 {
@@ -12,7 +12,7 @@ public:
 	int Max() const { return INPOTION; };
 
 private:
-	std::string m_incomeOptions[INPOTION] = { "Rome ", "Prague " ,"New York ",  "India ", "Thailand" };
+	std::string m_incomeOptions[INPOTION] = { "Monthly salary ", "Partial salary " ,"Allwance ",  "Stpiend "};
 
 };
 

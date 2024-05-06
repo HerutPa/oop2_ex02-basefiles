@@ -20,6 +20,8 @@ private:
 };
 
 
+
+
 template<class T>
 inline const std::string ValuesToNames<T>::valuesAndNames()
 {
