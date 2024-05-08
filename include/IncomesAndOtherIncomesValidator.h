@@ -1,8 +1,9 @@
 #pragma once
 #include "FormValidator.h"
+#include "memory.h"
 
 template <class T1, class T2>
-class IncomesAndOtherIncomesValidator : public FormValidator
+class IncomesAndOtherIncomesValidator : public FormValidator     
 {
 public:
 	IncomesAndOtherIncomesValidator(T1*, T2*);

@@ -1,9 +1,11 @@
 #pragma once
 #include "Validators.h"
 #include <string>
+#include <regex>
 
 
-class RegexValidator : public Validators<string>
+
+class RegexValidator : public Validators<std::string>
 {
 
 
