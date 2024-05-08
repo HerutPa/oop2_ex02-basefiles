@@ -29,7 +29,7 @@ bool RangeValidator<T>::checkValidation(const T& value)
 	bool flag = (value >= m_min && value <= m_max);
 	return flag;
 }
-
+;
 template<typename T>
 bool RangeValidator<ValuesToNames<T>>::checkValidation(const T& value)
 {
