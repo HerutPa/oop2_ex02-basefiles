@@ -103,8 +103,8 @@ int main()
 	auto idField = std::make_unique<Field<uint32_t>>("What is your ID?");
 	auto mailField = std::make_unique<Field<std::string>>("What is your mail?");
 	auto addressField = std::make_unique<Field<std::string>>("What is your address?");
-	//auto dateOfBirthField = std::make_unique<Field<Date>>("What is your date of birth? (YYYY-MM-DD)");
-	//auto startDateTaxYearField = std::make_unique<Field<Date>>("Date of beginning work in the tax year? (YYYY-MM-DD)");
+	auto dateOfBirthField = std::make_unique<Field<Date>>("What is your date of birth? (YYYY-MM-DD)");
+	auto startDateTaxYearField = std::make_unique<Field<Date>>("Date of beginning work in the tax year? (YYYY-MM-DD)");
 	auto incomeOptions = ValuesToNames<IncomeOptions>();
 	auto incomeField = std::make_unique<Field<ValuesToNames<IncomeOptions>>> ("Details of my income from this employer: I receive:\n" + incomeOptions.valuesAndNames());
 	auto otherIncomes = ValuesToNames<OtherIncomes>();
@@ -117,7 +117,7 @@ int main()
 	auto idValidator = std::make_unique<IdValidator>();
 	auto mailValidator = std::make_unique<RegexValidator>(MailPattern::getPattern());
 	auto addressValidator = std::make_unique<RegexValidator>(AddressPattern::getPattern());
-	//auto ageValidator = std::make_unique<RangeValidator<Date>>(currentDate() - MAX_AGE, currentDate() - MIN_AGE);
+	auto ageValidator = std::make_unique<RangeValidator<Date>>(currentDate() - MAX_AGE, currentDate() - MIN_AGE);
 	//auto startDateTaxYearValidator = std::make_unique<RangeValidator<Date >>(currentYear(), currentDate());
 	auto incomeValidator = std::make_unique<RangeValidator<ValuesToNames<IncomeOptions>>>(1, 4);
 	auto otherIncomeValidator = std::make_unique<RangeValidator<ValuesToNames<OtherIncomes>>>(1, 6);
@@ -135,8 +135,8 @@ int main()
 	taxCreditsField->addValidator(taxCreditsValidator.get());
 
 	// Creating form validators
-	auto incomesAndOtherIncomesValidator = std::make_unique<IncomesAndOtherIncomesValidator>(incomeField.get(), otherIncomesField.get());
-	auto otherIncomesAndTaxCreditsValidator = std::make_unique<OtherIncomesAndTaxCreditsValidator>(otherIncomesField.get(), taxCreditsField.get());
+	//auto incomesAndOtherIncomesValidator = std::make_unique<IncomesAndOtherIncomesValidator>(incomeField.get(), otherIncomesField.get());
+	//auto otherIncomesAndTaxCreditsValidator = std::make_unique<OtherIncomesAndTaxCreditsValidator>(otherIncomesField.get(), taxCreditsField.get());
 
 	// Creating the form and adding the fields to it
 	//auto myForm = Form();
@@ -152,8 +152,8 @@ int main()
 	myForm.addField(taxCreditsField.get());
 
 	// Adding form validators
-	myForm.addValidator(incomesAndOtherIncomesValidator.get());
-	myForm.addValidator(otherIncomesAndTaxCreditsValidator.get());
+	//myForm.addValidator(incomesAndOtherIncomesValidator.get());
+	//myForm.addValidator(otherIncomesAndTaxCreditsValidator.get());
 
 	// Getting the information from the user
 	clearScreen();

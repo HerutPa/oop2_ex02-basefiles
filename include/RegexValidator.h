@@ -7,19 +7,14 @@
 
 class RegexValidator : public Validators<std::string>
 {
-
-
 public:
-    RegexValidator(const std::string& patternStr) : Validators(/*string*/), pattern(patternStr) {}
+    RegexValidator(const std::string& patternStr) : Validators("error "/*check*/), pattern(patternStr) {}
 
-    bool validate(const std::string& input) const
-    {
-        return std::regex_match(input, pattern);
-    }
+    bool checkValidation(const std::string& val) override { return std::regex_match(val, pattern); };
+   
+
 
 private:
     std::regex pattern;
 };
-
-
 

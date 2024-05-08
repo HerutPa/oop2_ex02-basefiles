@@ -6,7 +6,7 @@ template <class T1, class T2>
 class IncomesAndOtherIncomesValidator : public FormValidator     
 {
 public:
-	IncomesAndOtherIncomesValidator(T1*, T2*);
+	IncomesAndOtherIncomesValidator(const T1*, const T2*);
 	const bool checkValidation() override;
 
 private:
@@ -15,7 +15,7 @@ private:
 };
 
 template<class T1, class T2>
-inline IncomesAndOtherIncomesValidator<T1, T2>::IncomesAndOtherIncomesValidator(T1* destination, T2* time)
+inline IncomesAndOtherIncomesValidator<T1, T2>::IncomesAndOtherIncomesValidator(const T1* destination,const T2* time)
 	:m_destination(destination), m_time(time)
 {
 }

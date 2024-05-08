@@ -12,12 +12,23 @@ public:
 	const int getValue() const;
 	const bool inRange();
 
+	friend bool operator>=(const int val1, const T& val2);
+	friend bool operator<=(const T& val1, const T& val2);
 
 
 private:
 	T m_name;
 	int m_value = 0; //the option that the user choose
 };
+
+
+template<class T>
+inline bool operator>=(const int val1, const T& val2)
+{
+	return (val1 >= val2.Min());
+
+}
+
 
 
 

@@ -1,4 +1,6 @@
 #pragma once
+#include <string>
+
 const int TAX = 3;
 class TaxCredits
 {
