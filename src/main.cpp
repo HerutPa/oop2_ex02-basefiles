@@ -135,10 +135,8 @@ int main()
 	taxCreditsField->addValidator(taxCreditsValidator.get());
 
 	// Creating form validators
-	auto incomesAndOtherIncomesValidator
-		= std::make_unique<IncomesAndOtherIncomesValidator>(incomeField.get(), otherIncomesField.get());
-	auto otherIncomesAndTaxCreditsValidator
-		= std::make_unique<OtherIncomesAndTaxCreditsValidator>(otherIncomesField.get(), taxCreditsField.get());
+	auto incomesAndOtherIncomesValidator = std::make_unique<IncomesAndOtherIncomesValidator>(incomeField.get(), otherIncomesField.get());
+	auto otherIncomesAndTaxCreditsValidator = std::make_unique<OtherIncomesAndTaxCreditsValidator>(otherIncomesField.get(), taxCreditsField.get());
 
 	// Creating the form and adding the fields to it
 	//auto myForm = Form();

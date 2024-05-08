@@ -1,12 +1,13 @@
 #pragma once
 #include <iostream>
-#include "Pattern.h"
 
 
 
-class AddressPattern : public Pattern {
+class AddressPattern
+{
 public:
-    static std::string getPattern() const override {
+    static std::string getPattern() 
+    {
         // דוגמה לתבנית לכתובת
         return ".+"; // דוגמה לתבנית לכתובת, כאן אני מניח שכל תו חוקי
     }

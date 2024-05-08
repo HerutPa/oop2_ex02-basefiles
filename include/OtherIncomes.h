@@ -1,4 +1,5 @@
 #pragma once 
+#include <string>
 const int INCOMES = 6;
 class OtherIncomes
 {

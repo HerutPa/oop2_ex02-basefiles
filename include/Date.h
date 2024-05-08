@@ -17,17 +17,10 @@ private:
 
 //opertor's
 
-    //    // שימוש באופרטורי החיבור והחיסור
-    //std::cout << "x + y = " << x + y << std::endl;
-    //std::cout << "x - y = " << x - y << std::endl;
-
-    //// שימוש באופרטורי ההשוואה
-    //std::cout << "x > y: " << (x > y) << std::endl;
-    //std::cout << "x < y: " << (x < y) << std::endl;
-    //std::cout << "x >= y: " << (x >= y) << std::endl;
-    //std::cout << "x <= y: " << (x <= y) << std::endl;
-
- 
 
 
+    friend std::ostream& operator<<(std::ostream& os, const Date& date);
+    friend std::istream& operator>>(std::istream& is, Date& date);
+    friend Date operator-(const Date& date1, const Date& date2);
 };
+

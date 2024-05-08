@@ -10,7 +10,7 @@ class RegexValidator : public Validators<std::string>
 
 
 public:
-    RegexValidator(const std::string& patternStr) : pattern(patternStr) {}
+    RegexValidator(const std::string& patternStr) : Validators(/*string*/), pattern(patternStr) {}
 
     bool validate(const std::string& input) const
     {
