@@ -118,7 +118,7 @@ int main()
 	auto mailValidator = std::make_unique<RegexValidator>(MailPattern::getPattern());
 	auto addressValidator = std::make_unique<RegexValidator>(AddressPattern::getPattern());
 	auto ageValidator = std::make_unique<RangeValidator<Date>>(currentDate() - MAX_AGE, currentDate() - MIN_AGE);
-	//auto startDateTaxYearValidator = std::make_unique<RangeValidator<Date >>(currentYear(), currentDate());
+	auto startDateTaxYearValidator = std::make_unique<RangeValidator<Date >>(currentYear(), currentDate());
 	auto incomeValidator = std::make_unique<RangeValidator<ValuesToNames<IncomeOptions>>>(1, 4);
 	auto otherIncomeValidator = std::make_unique<RangeValidator<ValuesToNames<OtherIncomes>>>(1, 6);
 	auto taxCreditsValidator = std::make_unique<RangeValidator<ValuesToNames<TaxCredits>>>(1, 3);

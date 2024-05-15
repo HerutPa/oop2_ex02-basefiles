@@ -29,10 +29,6 @@ inline bool operator>=(const int val1, const T& val2)
 
 }
 
-
-
-
-
 template<class T>
 inline const std::string ValuesToNames<T>::valuesAndNames()
 {
