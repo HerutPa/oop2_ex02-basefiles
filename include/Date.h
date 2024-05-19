@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 
+
+//this calss define all times is form
 class Date
 {
 public:

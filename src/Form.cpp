@@ -23,23 +23,10 @@ const bool Form::validateForm()
 			valid = false;
 		}
 	}
-	//only if fields valid check the combinations
+	//only if fields valid check
 	if (valid)
 	{
-		m_time_destination_valid = m_validators[0]->checkValidation();
-		if (!m_time_destination_valid)
-		{
-			valid = false;
-			m_basefields[TIME]->setValid();
-			m_basefields[DESTINATION]->setValid();
-		}
-		m_wifi_destination_valid = m_validators[1]->checkValidation();
-		if (!m_wifi_destination_valid)
-		{
-			valid = false;
-			m_basefields[WIFI_BUNDLE]->setValid();
-			m_basefields[DESTINATION]->setValid();
-		}
+
 	}
 	return valid;
 }
@@ -61,15 +48,6 @@ BaseField* Form::getField(int field) const
 	return m_basefields[field];
 }
 
-const bool Form::getTimeDest() const
-{
-	return m_time_destination_valid;
-}
-
-const bool Form::getWifiDest() const
-{
-	return m_wifi_destination_valid;
-}
 
 std::ostream& operator<<(std::ostream& os, Form& form)
 {
@@ -77,13 +55,4 @@ std::ostream& operator<<(std::ostream& os, Form& form)
 	{
 		form.getField(field)->printField(os);
 	}
-	if (!form.getTimeDest())
-	{
-		os << "Destination and flight time don't match\n";
-	}
-	if (!form.getWifiDest())
-	{
-		os << "Destination and WIFI bundle don't match\n";
-	}
-	return os;
 }

@@ -94,8 +94,6 @@ constexpr int MAX_AGE = 67;
 
 //------------------- main ----------------------------
 
-
-
 int main()
 {
 	// Creating the form fields
@@ -135,25 +133,25 @@ int main()
 	taxCreditsField->addValidator(taxCreditsValidator.get());
 
 	// Creating form validators
-	//auto incomesAndOtherIncomesValidator = std::make_unique<IncomesAndOtherIncomesValidator>(incomeField.get(), otherIncomesField.get());
-	//auto otherIncomesAndTaxCreditsValidator = std::make_unique<OtherIncomesAndTaxCreditsValidator>(otherIncomesField.get(), taxCreditsField.get());
+	auto incomesAndOtherIncomesValidator = std::make_unique<IncomesAndOtherIncomesValidator>(incomeField.get(), otherIncomesField.get());
+	auto otherIncomesAndTaxCreditsValidator = std::make_unique<OtherIncomesAndTaxCreditsValidator>(otherIncomesField.get(), taxCreditsField.get());
 
-	// Creating the form and adding the fields to it
-	//auto myForm = Form();
+	//Creating the form and adding the fields to it
+	auto myForm = Form();
 	Form myForm;
 	myForm.addField(nameField.get());
 	myForm.addField(idField.get());
 	myForm.addField(mailField.get());
 	myForm.addField(addressField.get());
-	//myForm.addField(dateOfBirthField.get());	
-	//myForm.addField(startDateTaxYearField.get());
+	myForm.addField(dateOfBirthField.get());	
+	myForm.addField(startDateTaxYearField.get());
 	myForm.addField(incomeField.get());
 	myForm.addField(otherIncomesField.get());
 	myForm.addField(taxCreditsField.get());
 
 	// Adding form validators
-	//myForm.addValidator(incomesAndOtherIncomesValidator.get());
-	//myForm.addValidator(otherIncomesAndTaxCreditsValidator.get());
+	myForm.addValidator(incomesAndOtherIncomesValidator.get());
+	myForm.addValidator(otherIncomesAndTaxCreditsValidator.get());
 
 	// Getting the information from the user
 	clearScreen();

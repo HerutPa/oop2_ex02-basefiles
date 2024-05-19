@@ -1,4 +1,5 @@
 #pragma once
+#include <cstdint>
 
 class IdValidator : public Validators<uint32_t>
 {

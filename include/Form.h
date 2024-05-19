@@ -6,8 +6,9 @@
 #include "Field.h"
 #include "FormValidator.h"
 
-enum Fields { NAME, ID, YEAR, DESTINATION, TIME, WIFI_BUNDLE };
+enum Fields { NAME, ID, YEAR};
 
+//class that defind all the field to one form
 class Form
 {
 public:
@@ -17,16 +18,11 @@ public:
 	void fillForm();
 	const int getFieldsNum() const;
 	BaseField* getField(int) const;
-	const bool getTimeDest() const;
-	const bool getWifiDest() const;
 
 
 private:
 	std::vector<BaseField*> m_basefields;
 	std::vector<FormValidator*> m_validators;
-	bool m_time_destination_valid = true;
-	bool m_wifi_destination_valid = true;
-
 };
 
 std::ostream& operator << (std::ostream& os, Form& form);

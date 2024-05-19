@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
 
-
-class BaseField
+// A parent class that inherits the functions for the fields class
+class BaseField 
 {
 public:
 	virtual void readData() = 0;
